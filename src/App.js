@@ -1,15 +1,15 @@
-import logo from "./logo.svg";
 import "./App.css";
 import React from "react";
-import firebase from "firebase";
+import { Route, Routes } from "react-router-dom";
+
+import Form from "./pages/Form";
 
 function App() {
-  const firebaseApp = firebase.apps[0];
   return (
     <div className="App">
-      <code>
-        <pre>{JSON.stringify(firebaseApp.options, null, 2)}</pre>
-      </code>
+      <Routes>
+        <Route path="victimform" element={<Form />}></Route>
+      </Routes>
     </div>
   );
 }
