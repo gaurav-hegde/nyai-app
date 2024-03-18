@@ -44,10 +44,11 @@ function Landing() {
         justifyContent: "center",
         alignItems: "center",
       }}
+      className="bg-gradient-to-b from-white to-gray-400 border-[24px] border-black"
     >
-      <div>
+      <div className="shadow-black">
         <div className="flex justify-center items-center">
-          <img className="w-1/3" src={Image} alt="" />
+          <img className="w-1/2" src={Image} alt="" />
         </div>
         <div className="text-3xl font-bold">
           <span className="fw-equality">Fostering Workplace Equality:</span>{" "}
@@ -56,11 +57,14 @@ function Landing() {
           </span>
         </div>
         <div className="py-24">
-          <button className="w-1/5 mx-12 py-2 border-2" onClick={handleHRClick}>
+          <button
+            className="w-1/5 mx-12 py-2 border-2 text-xl font-semibold rounded-lg bg-black text-white"
+            onClick={handleHRClick}
+          >
             HR
           </button>
           <button
-            className="w-1/5 mx-12 py-2 border-2"
+            className="w-1/5 mx-12 py-2 border-2 text-xl font-semibold rounded-lg bg-black text-white"
             onClick={handleEmployeeClick}
           >
             Employee
