@@ -43,8 +43,12 @@ function Dashboard() {
   const ongoingData = data.filter((item) => item.receiver_report === "");
 
   return (
-    <div className="flex flex-col justify-center items-center h-screen w-screen">
-      <img src={Image} className="w-[28rem]" alt="logo" />
+    <div className="flex flex-col justify-start items-center h-screen w-screen">
+      <img
+        src={Image}
+        className="w-[12rem] md:w-[28rem] mb-4 md:mb-0"
+        alt="logo"
+      />
       <div className="inline-flex rounded-lg border border-gray-100 bg-gray-500 p-1">
         <button
           className={`inline-block rounded-md px-4 py-2 text-sm ${

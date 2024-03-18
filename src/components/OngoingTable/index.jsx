@@ -2,7 +2,7 @@ import React from "react";
 
 function OngoingTable({ data }) {
   return (
-    <div className="overflow-x-auto w-[80%] rounded-lg border border-gray-200 mt-3">
+    <div className="overflow-x-auto w-[80%] h-[70%] rounded-lg border border-gray-200 mt-3">
       <table className="min-w-full divide-y-2 divide-gray-200 bg-white text-sm">
         <thead className="ltr:text-left rtl:text-right">
           <tr>
