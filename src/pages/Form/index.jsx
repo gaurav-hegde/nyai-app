@@ -253,7 +253,7 @@ function Form() {
   return (
     <div
       className={`flex flex-col items-center justify-center h-screen ${
-        darkMode ? "bg-[#270330]" : "bg-[#7334FA]"
+        darkMode ? "bg-[#1E1E1E]" : "bg-[#7334FA]"
       }`}
     >
       <div
@@ -296,7 +296,7 @@ function Form() {
                 value={formData.sender}
                 onChange={handleChange}
                 className={`w-full py-2 px-3 leading-tight border-2 border-gray-300 rounded focus:outline-none focus:border-slate-400 hover:shadow ${
-                  darkMode ? "bg-gray-700 text-white hover:shadow-black" : ""
+                  darkMode ? "bg-[#1E1E1E] text-white hover:shadow-black" : ""
                 }`}
               />
             </div>
@@ -318,7 +318,7 @@ function Form() {
                 value={formData.receiver}
                 onChange={handleChange}
                 className={`w-full py-2 px-3 leading-tight border-2 border-gray-300 rounded focus:outline-none focus:border-slate-400 hover:shadow ${
-                  darkMode ? "bg-gray-700 text-white hover:shadow-black" : ""
+                  darkMode ? "bg-[#1E1E1E] text-white hover:shadow-black" : ""
                 }`}
               />
             </div>
@@ -339,7 +339,7 @@ function Form() {
                 value={formData.event_report}
                 onChange={handleChange}
                 className={`w-full py-2 px-3 h-[20rem] leading-tight border-2 border-gray-300 rounded focus:outline-none focus:border-slate-400 resize-none hover:shadow ${
-                  darkMode ? "bg-gray-700 text-white hover:shadow-black" : ""
+                  darkMode ? "bg-[#1E1E1E] text-white hover:shadow-black" : ""
                 }`}
               ></textarea>
             </div>
@@ -360,7 +360,7 @@ function Form() {
               value="Submit"
               className={`w-full ${
                 darkMode
-                  ? "bg-gray-700 hover:bg-black text-white"
+                  ? "bg-[#1E1E1E] hover:bg-gray-700 text-white"
                   : "bg-[#450BC2] hover:bg-[#32009C]"
               } border-2 hover:border-2 text-white font-bold py-2 px-4 rounded cursor-pointer`}
             />
