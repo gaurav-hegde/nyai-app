@@ -6,14 +6,15 @@ import { useNavigate } from "react-router-dom";
 import "./Login.css"; // Import CSS file for styling
 
 // Initialize Firebase
+// Initialize Firebase
 const firebaseConfig = {
-  apiKey: "your-api-key",
-  authDomain: "your-auth-domain",
-  projectId: "your-project-id",
-  storageBucket: "your-storage-bucket",
-  messagingSenderId: "your-messaging-sender-id",
-  appId: "your-app-id",
-  measurementId: "your-measurement-id",
+  apiKey: "AIzaSyAW7Le8Z4S9CDMuQlsQ9qWFa0F50SZDhqs",
+  authDomain: "nyai-fc749.firebaseapp.com",
+  projectId: "nyai-fc749",
+  storageBucket: "nyai-fc749.appspot.com",
+  messagingSenderId: "729652119854",
+  appId: "1:729652119854:web:18efc648080ad7169a92bf",
+  measurementId: "G-HZ7SP6PNMC",
 };
 
 if (!firebase.apps.length) {
