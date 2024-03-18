@@ -15,7 +15,7 @@ function Form() {
 
     try {
       const response = await axios.post(
-        `${process.env.REACT_APP_BACKEND}/victimform`,
+        `${process.env.REACT_APP_BACKEND}/create_case`,
         formData
       );
 
