@@ -6,6 +6,7 @@ import Landing from "./pages/Landing";
 import Form from "./pages/Form";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
+import ReceiverForm from "./pages/ReceiverForm";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="victimform" element={<Form />}></Route>
         <Route path="login" element={<Login />}></Route>
         <Route path="dashboard" element={<Dashboard />}></Route>
+        <Route path="cases/:case_id" element={<ReceiverForm />}></Route>
       </Routes>
     </div>
   );
