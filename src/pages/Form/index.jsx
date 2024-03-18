@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 
+import Image from "../../assets/logo.png";
+
 function Form() {
   const [formData, setFormData] = useState({
     sender: "",
@@ -61,7 +63,8 @@ function Form() {
   };
 
   return (
-    <div className="flex items-center justify-center h-screen bg-slate-500">
+    <div className="flex flex-col items-center justify-center h-screen bg-[#FFFBD7]">
+      <img src={Image} alt="logo" className="w-[23rem] mb-5"></img>
       <form
         className="w-[24rem] h-[39rem] mx-auto p-4 rounded-md shadow-md bg-white md:w-[42rem] "
         onSubmit={handleSubmit}
@@ -100,7 +103,7 @@ function Form() {
         <input
           type="submit"
           value="Submit"
-          className="w-full bg-slate-900 border-2 hover:bg-slate-400 hover:border-slate-600 hover:border-2 text-white font-bold py-2 px-4 rounded cursor-pointer"
+          className="w-full bg-amber-500 border-2 hover:bg-amber-200 hover:text-black hover:border-amber-400 hover:border-2 text-white font-bold py-2 px-4 rounded cursor-pointer"
         />
       </form>
 
