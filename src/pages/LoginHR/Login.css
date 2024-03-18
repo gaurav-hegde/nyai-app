@@ -1,0 +1,20 @@
+/*  */
+
+/* .fade-in {
+  width: 48px;
+  opacity: 1;
+  animation: fadeIn 2s forwards;
+} */
+
+.come_right {
+  animation: slideIn 2s forwards, fadeIn 2s forwards;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}

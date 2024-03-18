@@ -282,7 +282,7 @@ function Form() {
               <label
                 htmlFor="sender"
                 className={`text-[#32009C] text-sm font-bold mb-1 ${
-                  darkMode ? "text-white" : ""
+                  darkMode ? "text-black" : ""
                 }`}
               >
                 Your Email
@@ -304,7 +304,7 @@ function Form() {
               <label
                 htmlFor="receiver"
                 className={`text-[#32009C] text-sm font-bold mb-1 ${
-                  darkMode ? "text-white" : ""
+                  darkMode ? "text-black" : ""
                 }`}
               >
                 Accused Email
@@ -326,7 +326,7 @@ function Form() {
               <label
                 htmlFor="event_report"
                 className={`text-[#32009C] text-sm font-bold mb-1 ${
-                  darkMode ? "text-white" : ""
+                  darkMode ? "text-black" : ""
                 }`}
               >
                 Description of the Event
@@ -370,21 +370,21 @@ function Form() {
               <div className="bg-white rounded-lg p-8">
                 <h2
                   className={`text-2xl font-bold ${
-                    darkMode ? "text-gray-700" : "text-white"
+                    darkMode ? "text-gray-700" : "text-black"
                   } mb-4`}
                 >
                   Submitted!
                 </h2>
-                <p className={`${darkMode ? "text-gray-800" : "text-white"}`}>
+                <p className={`${darkMode ? "text-gray-800" : "text-black"}`}>
                   Your form has been submitted successfully.
                 </p>
                 <button
                   onClick={handleClosePopup}
                   className={`mt-4 ${
                     darkMode
-                      ? "bg-gray-800 hover:bg-gray-600"
+                      ? "text-white bg-gray-800 hover:bg-gray-600"
                       : "bg-slate-500 hover:bg-slate-600"
-                  } text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline`}
+                  } font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline`}
                 >
                   Close
                 </button>
