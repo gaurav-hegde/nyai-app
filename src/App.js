@@ -7,6 +7,7 @@ import Form from "./pages/Form";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import ReceiverForm from "./pages/ReceiverForm";
+import Display from "./pages/Display";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="login" element={<Login />}></Route>
         <Route path="dashboard" element={<Dashboard />}></Route>
         <Route path="cases/:case_id" element={<ReceiverForm />}></Route>
+        <Route path="display" element={<Display />}></Route>
       </Routes>
     </div>
   );
