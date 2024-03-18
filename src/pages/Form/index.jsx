@@ -15,7 +15,7 @@ function Form() {
 
     try {
       const response = await axios.post(
-        "http://127.0.0.1:5000/create_case",
+        `${process.env.REACT_APP_BACKEND}/victimform`,
         formData
       );
 
