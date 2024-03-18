@@ -9,7 +9,7 @@ function Display({ caseId }) {
     const fetchCaseData = async () => {
       try {
         const response = await axios.get(
-          `https://nyai-backend.onrender.com/case/4GMO5CJS53`
+          `https://nyai-backend.onrender.com/case/3FM1CW4Z2P`
         );
         setCaseData(response.data);
       } catch (error) {

@@ -36,28 +36,38 @@ function Landing() {
     navigate("/login");
   };
   return (
-    <>
-      <div className="flex justify-center items-center">
-        <img className="w-1/2" src={Image} alt="" />
+    <div
+      style={{
+        height: "100vh",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <div>
+        <div className="flex justify-center items-center">
+          <img className="w-1/3" src={Image} alt="" />
+        </div>
+        <div className="text-3xl font-bold">
+          <span className="fw-equality">Fostering Workplace Equality:</span>{" "}
+          <span style={{ height: "40px", overflow: "hidden" }}>
+            {nyayaLanguages[nyayaIndex]}
+          </span>
+        </div>
+        <div className="py-24">
+          <button className="w-1/5 mx-12 py-2 border-2" onClick={handleHRClick}>
+            HR
+          </button>
+          <button
+            className="w-1/5 mx-12 py-2 border-2"
+            onClick={handleEmployeeClick}
+          >
+            Employee
+          </button>
+        </div>
       </div>
-      <div className="text-3xl font-bold">
-        <span className="fw-equality">Fostering Workplace Equality:</span>{" "}
-        <span style={{ height: "40px", overflow: "hidden" }}>
-          {nyayaLanguages[nyayaIndex]}
-        </span>
-      </div>
-      <div className="py-12">
-        <button className="w-1/4 mx-4 py-2 border-2" onClick={handleHRClick}>
-          HR
-        </button>
-        <button
-          className="w-1/4 mx-4 py-2 border-2"
-          onClick={handleEmployeeClick}
-        >
-          Employee
-        </button>
-      </div>
-    </>
+    </div>
   );
 }
 

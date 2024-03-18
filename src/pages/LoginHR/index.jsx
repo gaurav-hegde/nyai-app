@@ -3,7 +3,6 @@ import firebase from "firebase/app";
 import "firebase/auth";
 import Image from "../../assets/logo.png";
 import { useNavigate } from "react-router-dom";
-import "./Login.css"; // Import CSS file for styling
 
 // Initialize Firebase
 const firebaseConfig = {

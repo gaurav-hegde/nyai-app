@@ -3,7 +3,8 @@ import firebase from "firebase/app";
 import "firebase/auth";
 import Image from "../../assets/logo.png";
 import { useNavigate } from "react-router-dom";
-import "./Login.css"; // Import CSS file for styling
+import darkModeIcon from "../../assets/dark.png";
+import lightModeIcon from "../../assets/light.png";
 
 // Initialize Firebase
 const firebaseConfig = {
@@ -80,17 +81,21 @@ const Login = () => {
 
   return (
     <>
-      <div className={`flex h-screen ${darkMode ? "bg-[#1E1E1E]" : ""}`}>
+      <div
+        className={`flex flex-col md:flex-row h-screen ${
+          darkMode ? "bg-[#1E1E1E]" : ""
+        }`}
+      >
         <div
-          className={`w-1/2 flex flex-col justify-center ${
+          className={`md:w-1/2 flex flex-col justify-center ${
             darkMode ? "dark" : ""
           }`}
         >
           <div className="flex justify-center items-center">
-            <img className="w-1/2" src={Image} alt="" />
+            <img className="md:w-1/2 py-8" src={Image} alt="" />
           </div>
           <div
-            className={`text-3xl font-bold ${
+            className={`text-3xl font-bold py-2 ${
               darkMode ? "text-white" : "text-[#32009C]"
             }`}
           >
@@ -101,12 +106,12 @@ const Login = () => {
           </div>
         </div>
         <div
-          className={`w-1/2 ${
+          className={`h-screen md:w-1/2 ${
             darkMode ? "bg-gray-300" : "bg-[#9C6EFF]"
           } flex justify-center items-center`}
         >
           <div
-            className={`h-3/5 w-4/6 flex-cols border-2 border-black come_right rounded-lg ${
+            className={`md:h-3/5 w-4/6 flex-cols border-2 border-black come_right rounded-lg ${
               darkMode ? "bg-[#1E1E1E]" : "bg-white "
             }`}
           >
@@ -188,14 +193,19 @@ const Login = () => {
             </div>
           </div>
         </div>
-        <div className="absolute top-4 right-4 z-10">
+        <div className="absolute top-1 right-1 md:absolute top-4 right-4 z-10">
           <button
-            className={`p-2 rounded-full ${
+            className={`p-2 flex items-center rounded-full ${
               darkMode ? "bg-white" : "bg-gray-700 text-white"
             }`}
             onClick={() => setDarkMode((prevMode) => !prevMode)}
           >
             {darkMode ? "Light" : "Dark"} Mode
+            <img
+              src={darkMode ? lightModeIcon : darkModeIcon}
+              alt="Mode Icon"
+              className="w-6 h-6 ml-2"
+            />
           </button>
         </div>
       </div>
