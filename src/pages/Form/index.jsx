@@ -63,10 +63,10 @@ function Form() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-[#FFFBD7]">
-      <img src={Image} alt="logo" className="w-[23rem] mb-5"></img>
+    <div className="flex flex-col items-center justify-center h-screen  border-[48px] border-[#FFFBD7]">
+      <img src={Image} alt="logo" className="w-1/5 "></img>
       <form
-        className="w-[24rem] h-[39rem] mx-auto p-4 rounded-md shadow-md bg-white md:w-[42rem] "
+        className="w-[24rem] h-[39rem] mx-auto p-4 rounded-md shadow-md bg-[#FFFBD7] bg-white md:w-[42rem] border-2 border-black"
         onSubmit={handleSubmit}
       >
         <h2 className="text-3xl pb-2">Complaint Form</h2>

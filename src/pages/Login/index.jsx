@@ -1,18 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import firebase from "firebase/app";
 import "firebase/auth";
 import Image from "../../assets/logo.png";
 import { useNavigate } from "react-router-dom";
+import "./Login.css"; // Import CSS file for styling
 
 // Initialize Firebase
 const firebaseConfig = {
-  apiKey: "AIzaSyAW7Le8Z4S9CDMuQlsQ9qWFa0F50SZDhqs",
-  authDomain: "nyai-fc749.firebaseapp.com",
-  projectId: "nyai-fc749",
-  storageBucket: "nyai-fc749.appspot.com",
-  messagingSenderId: "729652119854",
-  appId: "1:729652119854:web:18efc648080ad7169a92bf",
-  measurementId: "G-HZ7SP6PNMC",
+  apiKey: "your-api-key",
+  authDomain: "your-auth-domain",
+  projectId: "your-project-id",
+  storageBucket: "your-storage-bucket",
+  messagingSenderId: "your-messaging-sender-id",
+  appId: "your-app-id",
+  measurementId: "your-measurement-id",
 };
 
 if (!firebase.apps.length) {
@@ -26,6 +27,28 @@ const Login = () => {
   const [error, setError] = useState(null);
   const [iserror, setIserror] = useState(false);
   const history = useNavigate();
+  const [nyayaIndex, setNyayaIndex] = useState(0);
+  const [showNyaya, setShowNyaya] = useState(true); // State to control the visibility of the text
+
+  const nyayaLanguages = [
+    "न्याय",
+    "நீதி",
+    "న్యాయం",
+    "നീതി",
+    "Justice",
+    "Justicia",
+    "正義",
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setNyayaIndex((prevIndex) => (prevIndex + 1) % nyayaLanguages.length);
+      setShowNyaya(false); // Hide the text before changing
+      setTimeout(() => setShowNyaya(true), 500); // Show the text after a short delay
+    }, 2000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   const handleSubmit = async () => {
     setSubmitted(true);
@@ -48,11 +71,17 @@ const Login = () => {
             <img className="w-1/2" src={Image} alt="" />
           </div>
           <div className="text-3xl font-bold">
-            Fostering Workplace Equality: न्याय
+            <span className="fw-equality">Fostering Workplace Equality:</span>{" "}
+            <span
+              className={showNyaya ? "fade-in" : "hidden"}
+              style={{ height: "40px", overflow: "hidden" }}
+            >
+              {nyayaLanguages[nyayaIndex]}
+            </span>
           </div>
         </div>
         <div className="w-1/2 bg-[#FFFBD7] flex justify-center items-center">
-          <div className="bg-white h-3/5 w-4/6 flex-cols border-2 border-black">
+          <div className="bg-white h-3/5 w-4/6 flex-cols border-2 border-black come_right">
             <div className="px-16 pt-16 text-4xl font-bold">Login</div>
             <div className="px-16 pt-16 font-bold">
               Email
