@@ -73,19 +73,18 @@ const Login = () => {
           </div>
           <div className="text-3xl font-bold">
             <span className="fw-equality">Fostering Workplace Equality:</span>{" "}
-            <span
-              className={showNyaya ? "fade-in" : "hidden"}
-              style={{ height: "40px", overflow: "hidden" }}
-            >
+            <span style={{ height: "40px", overflow: "hidden" }}>
               {nyayaLanguages[nyayaIndex]}
             </span>
           </div>
         </div>
-        <div className="w-1/2 bg-[#FFFBD7] flex justify-center items-center">
-          <div className="bg-white h-3/5 w-4/6 flex-cols border-2 border-black come_right">
+        <div className="w-1/2 bg-[#ffde5a] flex justify-center items-center">
+          <div className="bg-white h-3/5 w-4/6 flex-cols border-2 border-black come_right rounded-lg">
             <div className="px-16 pt-16 text-4xl font-bold">Login</div>
-            <div className="px-16 pt-16 font-bold">
-              Email
+            <div className="px-16 pt-16 font-bold text-left">
+              {" "}
+              {/* Set text alignment to left */}
+              Enter Email
               <input
                 className="shadow appearance-none border rounded w-full py-2 px-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline my-2"
                 id="username"
@@ -95,7 +94,9 @@ const Login = () => {
                 onChange={(e) => setUsername(e.target.value)}
               />
             </div>
-            <div className="px-16 pt-4 font-bold">
+            <div className="px-16 pt-4 font-bold text-left">
+              {" "}
+              {/* Set text alignment to left */}
               Enter Password
               <input
                 className="shadow appearance-none border rounded w-full py-2 px-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline my-2"
@@ -120,7 +121,7 @@ const Login = () => {
             <div className="flex flex-rows gap-x-4 px-16 py-16">
               <div className="flex-1">
                 <button
-                  className="border-2 border-black py-1 w-full rounded-full"
+                  className="border-2 border-black py-1 w-full rounded-lg bg-black text-white font-semibold"
                   onClick={handleSubmit}
                 >
                   Submit
