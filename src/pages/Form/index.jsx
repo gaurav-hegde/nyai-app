@@ -6,7 +6,7 @@ function Form() {
     sender: "",
     receiver: "",
     event_report: "",
-    event_proof: ["meow", "meow"],
+    event_proof: [],
   });
   const [showSuccessPopup, setShowSuccessPopup] = useState(false);
 
@@ -15,7 +15,7 @@ function Form() {
 
     try {
       const response = await axios.post(
-        "https://nyai-backend.onrender.com/create_case",
+        `https://nyai-backend.onrender.com/create_case`,
         formData
       );
 
@@ -26,7 +26,7 @@ function Form() {
         sender: "",
         receiver: "",
         event_report: "",
-        event_proof: null,
+        event_proof: [],
       });
     } catch (error) {
       console.error("Error submitting form:", error);
@@ -34,11 +34,26 @@ function Form() {
   };
 
   const handleChange = (event) => {
-    const { name, value } = event.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
+    const { name, value, type } = event.target;
+
+    if (type === "file") {
+      const file = event.target.files[0];
+      const reader = new FileReader();
+
+      reader.onloadend = () => {
+        setFormData({
+          ...formData,
+          [name]: [...formData[name], reader.result],
+        });
+      };
+
+      reader.readAsDataURL(file);
+    } else {
+      setFormData({
+        ...formData,
+        [name]: value,
+      });
+    }
   };
 
   const handleClosePopup = () => {
@@ -79,9 +94,7 @@ function Form() {
           type="file"
           name="event_proof"
           accept="image/*"
-          onChange={(event) =>
-            setFormData({ ...formData, event_proof: event.target.files[0] })
-          }
+          onChange={handleChange}
           className="text-base mx-auto pb-3 text-slate-500 file:mx-3 file:py-2 file:px-8 file:border-[1px] file:text-md file:font-medium file:bg-stone-50 file:text-stone-700 hover:file:cursor-pointer hover:file:bg-slate-50 hover:file:text-slate-700"
         />
         <input
