@@ -15,7 +15,7 @@ function Form() {
 
     try {
       const response = await axios.post(
-        `${process.env.REACT_APP_BACKEND}/create_case`,
+        `https://nyai-backend.onrender.com/create_case`,
         formData
       );
 
