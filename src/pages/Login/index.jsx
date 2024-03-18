@@ -42,12 +42,17 @@ const Login = () => {
 
   return (
     <>
-      <div className="flex bg-[#FFFBD7] h-screen">
-        <div className="w-1/2 flex justify-center items-center">
-          <img className="w-1/2" src={Image} alt="" />
+      <div className="flex  h-screen">
+        <div className="w-1/2 flex flex-col justify-center">
+          <div className="flex justify-center items-center">
+            <img className="w-1/2" src={Image} alt="" />
+          </div>
+          <div className="text-3xl font-bold">
+            Fostering Workplace Equality: न्याय
+          </div>
         </div>
-        <div className="w-1/2">
-          <div className="bg-white my-40 mx-32 flex-cols border-2 border-black">
+        <div className="w-1/2 bg-[#FFFBD7] flex justify-center items-center">
+          <div className="bg-white h-3/5 w-4/6 flex-cols border-2 border-black">
             <div className="px-16 pt-16 text-4xl font-bold">Login</div>
             <div className="px-16 pt-16 font-bold">
               Email
