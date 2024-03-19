@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import Image from "../../assets/logo.png";
+import Image from "../../assets/white_logo.png";
 import { useNavigate } from "react-router-dom";
+import Background from "../../assets/background.png";
 
 function Landing() {
   const navigate = useNavigate();
@@ -43,28 +44,33 @@ function Landing() {
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
+        backgroundImage: `url(${Background})`, // Use imported background image
+        backgroundSize: "cover",
       }}
-      className="bg-gradient-to-b from-white to-gray-400 border-[24px] border-black"
+      // className="bg-gradient-to-b from-white to-gray-400 border-[24px] border-black"
+      className=""
     >
-      <div className="shadow-black">
-        <div className="flex justify-center items-center">
-          <img className="w-1/2" src={Image} alt="" />
+      <div className="shadow-black flex flex-row gap-32">
+        <div className="flex flex-col justify-center gap-4">
+          <div className="flex justify-center items-center">
+            <img className="w-2/5" src={Image} alt="" />
+          </div>
+          <div className="text-3xl font-bold text-white">
+            <span className="fw-equality">Fostering Workplace Equality:</span>{" "}
+            <span style={{ height: "40px", overflow: "hidden" }}>
+              {nyayaLanguages[nyayaIndex]}
+            </span>
+          </div>
         </div>
-        <div className="text-3xl font-bold">
-          <span className="fw-equality">Fostering Workplace Equality:</span>{" "}
-          <span style={{ height: "40px", overflow: "hidden" }}>
-            {nyayaLanguages[nyayaIndex]}
-          </span>
-        </div>
-        <div className="py-24">
+        <div className="py-24 flex flex-col w-3/5 gap-12">
           <button
-            className="w-1/5 mx-12 py-2 border-2 text-xl font-semibold rounded-lg bg-black text-white"
+            className="w-1/2 py-4 border-2 text-xl font-semibold rounded-lg bg-black text-white"
             onClick={handleHRClick}
           >
             HR
           </button>
           <button
-            className="w-1/5 mx-12 py-2 border-2 text-xl font-semibold rounded-lg bg-black text-white"
+            className="w-1/2 py-4 px-10 border-2 text-xl font-semibold rounded-lg bg-black text-white"
             onClick={handleEmployeeClick}
           >
             Employee

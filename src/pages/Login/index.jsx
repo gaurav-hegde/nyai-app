@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import firebase from "firebase/app";
 import "firebase/auth";
-import Image from "../../assets/logo.png";
+import Image from "../../assets/white_logo.png";
 import { useNavigate } from "react-router-dom";
 import darkModeIcon from "../../assets/dark.png";
 import lightModeIcon from "../../assets/light.png";
+import Background from "../../assets/background.png";
 
 // Initialize Firebase
 const firebaseConfig = {
@@ -80,23 +81,33 @@ const Login = () => {
   };
 
   return (
-    <>
+    <div
+      style={{
+        height: "100vh",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundImage: `url(${Background})`, // Use imported background image
+        backgroundSize: "cover",
+      }}
+    >
       <div
-        className={`flex flex-col md:flex-row h-screen ${
+        className={`flex flex-col justify-center items-center h-screen ${
           darkMode ? "bg-[#1E1E1E]" : ""
         }`}
       >
         <div
-          className={`md:w-1/2 flex flex-col justify-center ${
+          className={`md:w-1/2 w-1/2 flex flex-col justify-center ${
             darkMode ? "dark" : ""
           }`}
         >
-          <div className="flex justify-center items-center">
-            <img className="md:w-1/2 py-8" src={Image} alt="" />
+          <div className="flex mt-16 justify-center items-center">
+            <img className="md:w-1/2 py-2" src={Image} alt="" />
           </div>
           <div
             className={`text-3xl font-bold py-2 ${
-              darkMode ? "text-white" : "text-[#32009C]"
+              darkMode ? "text-white" : "text-white"
             }`}
           >
             <span className="fw-equality">Fostering Workplace Equality:</span>{" "}
@@ -106,25 +117,26 @@ const Login = () => {
           </div>
         </div>
         <div
-          className={`h-screen md:w-1/2 ${
-            darkMode ? "bg-gray-300" : "bg-[#9C6EFF]"
-          } flex justify-center items-center`}
+          // className={`h-screen md:w-1/2 ${
+          //   darkMode ? "bg-gray-300" : "bg-[#9C6EFF]"
+          // } flex justify-center items-center`}
+          className={`h-screen md:w-1/2 flex justify-center items-center`}
         >
           <div
-            className={`md:h-3/5 w-4/6 flex-cols border-2 border-black come_right rounded-lg ${
-              darkMode ? "bg-[#1E1E1E]" : "bg-white "
+            className={` md:h-[75%] w-[90%] flex-cols border-2 border-black come_right rounded-lg ${
+              darkMode ? "bg-[#1E1E1E]" : "bg-white/35 "
             }`}
           >
             <div
               className={`px-16 pt-16 text-4xl font-bold ${
-                darkMode ? "text-white" : "text-[#32009C]"
+                darkMode ? "text-white" : "text-white"
               }`}
             >
               Login
             </div>
             <div
               className={`px-16 pt-16 font-bold ${
-                darkMode ? "text-white" : "text-[#32009C]"
+                darkMode ? "text-white" : "text-white"
               } text-left`}
             >
               Enter Email
@@ -141,7 +153,7 @@ const Login = () => {
             </div>
             <div
               className={`px-16 pt-4 font-bold ${
-                darkMode ? "text-white" : "text-[#32009C]"
+                darkMode ? "text-white" : "text-white"
               } text-left`}
             >
               Enter Password
@@ -160,7 +172,7 @@ const Login = () => {
               (username.trim() === "" || password.trim() === "") && (
                 <div
                   className={`px-16 pt-2 ${
-                    darkMode ? "text-red-300" : "text-red-600"
+                    darkMode ? "text-red-900" : "text-red-400"
                   }`}
                 >
                   Please fill all fields
@@ -171,7 +183,7 @@ const Login = () => {
               !(username.trim() === "" || password.trim() === "") && (
                 <div
                   className={`px-16 pt-2 ${
-                    darkMode ? "text-red-300" : "text-red-600"
+                    darkMode ? "text-red-300" : "text-red-400"
                   }`}
                 >
                   {error}
@@ -183,7 +195,7 @@ const Login = () => {
                   className={`border-2  py-1 w-full rounded-lg ${
                     darkMode
                       ? "bg-white hover:bg-gray-300 hover:text-black "
-                      : "bg-[#450BC2] hover:bg-[#32009C] text-white border-[#32009C]"
+                      : "bg-white text-black hover:bg-[#32009C]  border-[#32009C]"
                   } font-semibold`}
                   onClick={handleSubmit}
                 >
@@ -193,7 +205,7 @@ const Login = () => {
             </div>
           </div>
         </div>
-        <div className="absolute top-1 right-1 md:absolute top-4 right-4 z-10">
+        {/* /* <div className="absolute top-1 right-1 md:absolute top-4 right-4 z-10">
           <button
             className={`p-2 flex items-center rounded-full ${
               darkMode ? "bg-white" : "bg-gray-700 text-white"
@@ -207,9 +219,9 @@ const Login = () => {
               className="w-6 h-6 ml-2"
             />
           </button>
-        </div>
+        </div> */}
       </div>
-    </>
+    </div>
   );
 };
 

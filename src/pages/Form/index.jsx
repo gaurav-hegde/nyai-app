@@ -170,6 +170,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Image from "../../assets/bal.png";
+import Background from "../../assets/background.png";
 
 function Form() {
   const [formData, setFormData] = useState({
@@ -251,6 +252,10 @@ function Form() {
 
   return (
     <div
+      style={{
+        backgroundImage: `url(${Background})`, // Use imported background image
+        backgroundSize: "cover",
+      }}
       className={`flex flex-col items-center justify-center h-screen ${
         darkMode ? "bg-[#1E1E1E]" : "bg-[#7334FA]"
       }`}
@@ -393,14 +398,14 @@ function Form() {
           )}
         </div>
       </div>
-      <button
+      {/* <button
         className={`fixed top-4 right-4 p-2 rounded-full ${
           darkMode ? "bg-gray-800 text-white" : "bg-white text-gray-800"
         } hover:bg-gray-200 hover:text-gray-800`}
         onClick={toggleDarkMode}
       >
         {darkMode ? "Light" : "Dark"} Mode
-      </button>
+      </button> */}
     </div>
   );
 }

@@ -20,7 +20,7 @@ function App() {
         <Route path="loginhr" element={<Login2 />}></Route>
         <Route path="dashboard" element={<Dashboard />}></Route>
         <Route path="cases/:case_id" element={<ReceiverForm />}></Route>
-        <Route path="display" element={<Display />}></Route>
+        <Route path="display/:case_id" element={<Display />}></Route>
       </Routes>
     </div>
   );

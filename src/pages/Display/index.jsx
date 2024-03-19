@@ -3,13 +3,16 @@ import axios from "axios";
 import CaseDetails from "../../components/CaseDetails";
 
 function Display({ caseId }) {
+  const Curl = window.location.href;
+  const parts = Curl.split("/");
+  let Id = parts[parts.length - 1];
   const [caseData, setCaseData] = useState(null);
 
   useEffect(() => {
     const fetchCaseData = async () => {
       try {
         const response = await axios.get(
-          `https://nyai-backend.onrender.com/case/3FM1CW4Z2P`
+          `https://nyai-backend.onrender.com/case/${Id}`
         );
         setCaseData(response.data);
       } catch (error) {

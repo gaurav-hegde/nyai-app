@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom"; // Import useParams hook from react-router-dom
 import Image from "../../assets/bal.jpg";
+import Background from "../../assets/background.png";
 
 function ReceiverForm() {
   const { case_id } = useParams(); // Use useParams to get the case_id from the URL
@@ -63,7 +64,13 @@ function ReceiverForm() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-[#dfc7a7]">
+    <div
+      className="flex flex-col items-center justify-center h-screen"
+      style={{
+        backgroundImage: `url(${Background})`, // Use imported background image
+        backgroundSize: "cover",
+      }}
+    >
       <div className="bg-white flex justify-center items-center w-4/6 px-4 rounded-[16px] gap-x-8">
         <div className="w-2/3 border-r-2 h-full flex items-center justify-center">
           <img className="px-2" src={Image} alt="" />

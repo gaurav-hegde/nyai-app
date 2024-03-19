@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-import Image from "../../assets/logo.png";
+import Image from "../../assets/white_logo.png";
 import ApprovalsTable from "../../components/ApprovalsTable";
 import OngoingTable from "../../components/OngoingTable";
 import HistoryTable from "../../components/HistoryTable";
+import Background from "../../assets/background.png";
 
 function Dashboard() {
   const [data, setData] = useState([]);
@@ -43,10 +44,16 @@ function Dashboard() {
   const ongoingData = data.filter((item) => item.receiver_report === "");
 
   return (
-    <div className="flex flex-col justify-start items-center h-screen w-screen">
+    <div
+      className="flex flex-col justify-start items-center h-screen w-screen "
+      style={{
+        backgroundImage: `url(${Background})`, // Use imported background image
+        backgroundSize: "cover",
+      }}
+    >
       <img
         src={Image}
-        className="w-[12rem] md:w-[28rem] mb-4 md:mb-0"
+        className="w-[10rem] md:w-[28rem] mb-4 md:mb-0"
         alt="logo"
       />
       <div className="inline-flex rounded-lg border border-gray-100 bg-gray-500 p-1">
