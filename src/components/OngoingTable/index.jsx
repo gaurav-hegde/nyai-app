@@ -66,11 +66,12 @@ function OngoingTable({ data }) {
           </tr>
         </thead>
         <tbody>
+          
           {data.map((item) => (
             <tr key={item.case_id}>
               {/* Make the case_id clickable and redirect to /display */}
               <td className="px-4 py-2">
-                <a href={`/display/${item.case_id}`}>{item.case_id}</a>
+              <a href={`/display/${item.case_id}`}>{item.case_id}</a>
               </td>
               <td className="px-4 py-2">{item.sender}</td>
               <td className="px-4 py-2">{item.receiver}</td>
