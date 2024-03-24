@@ -38,9 +38,9 @@ function Dashboard() {
   };
 
   const approvalsData = data.filter(
-    (item) => item.receiver_report !== "" && item.approval === "pending"
+    (item) => item.approval === "False"
   );
-  const historyData = data.filter((item) => item.approval === "False");
+  const historyData = data.filter((item) => item.approval === "True");
   const ongoingData = data.filter((item) => item.receiver_report === "");
 
   return (
